@@ -41,7 +41,8 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'base',
-    'home'
+    'home',
+    'login'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -89,3 +90,6 @@ STATIC_URL = "http://localhost:8000/static/"
 STATIC_ROOT = 'tianyun/static/'
 
 TEMPLATE_DIRS = [os.path.join(PROJECT_ROOT, "templates")]
+
+# Global login
+LOGIN_URL = '/login/'
