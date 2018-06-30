@@ -1,0 +1,16 @@
+@charset "utf-8";
+/* Global Styles */
+body, html {height: 100%; width: 100%; max-width: 100%;}
+html {font-family: sans-serif; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%}
+code, kbd, pre, samp {font-family: monospace, monospace; font-size: 1em}
+button, input, select, textarea {font-family: inherit; font-size: inherit; line-height: inherit}
+body {font-family: PingFang SC,Lantinghei SC,Helvetica Neue,Helvetica,Arial,Microsoft YaHei,\\5FAE\8F6F\96C5\9ED1,STHeitiSC-Light,simsun,\\5B8B\4F53,WenQuanYi Zen Hei,WenQuanYi Micro Hei,"sans-serif"; color: #303030; overflow-x: hidden; margin: auto;}
+
+.main {min-height: 500px;}
+
+.header { height: 200px; background-color: aqua;}
+.header .header-title {text-align: center;}
+.header .header-title p {line-height: 200px; font-size: 30px;}
+
+.footer { height: 100px; background-color: azure;}
+.footer .footer-content { text-align: center; padding: 25px;}
