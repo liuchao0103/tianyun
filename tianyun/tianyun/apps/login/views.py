@@ -20,13 +20,11 @@ def post_login(request):
     try:
         form = forms.LoginForm(request.POST)
         if not form.is_valid():
-            form._errors[NON_FIELD_ERRORS] = form.error_class([_("Error")])
             return render(request, "login/index.html", locals()) 
         username = form.cleaned_data['username']
         password = form.cleaned_data['password']
         user = authenticate(username=username, password=password)
         if not user:
-            form._errors[NON_FIELD_ERRORS] = form.error_class([_("No User")])
             return render(request, "login/index.html", locals()) 
         login(request, user)
         return http.HttpResponseRedirect('/')

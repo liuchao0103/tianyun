@@ -6,6 +6,17 @@
 {% trans "首页" %}
 {% endblock %}
 {% block content %}
-haha
+<section id="home">
+    <div class="container">
+        <h2>当日完成明细(<a href="/add/"> + 添加积分</a>)</h2>
+        {% if records %}
+        {% for item in records %}
+        {{ item.user.name }}-{{ item.created_at }}-{{ item.production_number }}
+        {% endfor %}
+        {% else %}
+        none
+        {% endif %}
+    </div>
+</section>
 {% endblock %}
 

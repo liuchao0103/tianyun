@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load utils %}
+
+{% block title %}
+{% trans "添加" %}
+{% endblock %}
+{% block content %}
+<section id="home">
+    <div class="container">
+        <form action="/add/post/" method="POST" id="add_form">
+            {% csrf_token %}
+            {% include "form.html" %}
+            <button class="form-button" type="submit">{% trans "添加" %}</button>
+        </form>
+    </div>
+</section>
+{% endblock %}
+
