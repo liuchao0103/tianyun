@@ -23,7 +23,7 @@
                 {% for item in records %}
                 <tr>
                     <td>{{ item.created_at|date:"Y-m-d H:i:s" }}</td>
-                    <td>{{ item.username }}</td>
+                    <td>{{ item.user.username }}</td>
                     <td>{{ item.production_id }}</td>
                     <td>{{ item.production_number }}</td>
                     <td>{{ item.coefficient }}</td>

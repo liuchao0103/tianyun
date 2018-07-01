@@ -8,8 +8,7 @@ from django.contrib.auth.models import User
 from config import codes
 
 class Accumulation(models.Model):
-    user_id = models.IntegerField(db_index=True)
-    username = models.CharField(max_length=32)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True, db_index=True)
     updated_at = models.DateTimeField(auto_now=True, db_index=True)
     status = models.IntegerField(default=codes.StatusCode.AVAILABLE.value, db_index=True)

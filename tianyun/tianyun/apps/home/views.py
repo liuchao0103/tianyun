@@ -23,7 +23,7 @@ from utils import http
 
 @login_required
 def index(request):
-    records = models.Accumulation.objects.filter(user_id=request.user.id)
+    records = models.Accumulation.objects.filter(user__id=request.user.id)
     return render(request, 'home/index.html', locals())
 
 @login_required
@@ -35,8 +35,7 @@ def show_add_view(request):
 def add_post(request):
     try:
         instance = models.Accumulation()
-        instance.user_id = request.user.id
-        instance.username = request.user.username
+        instance.user = request.user
         cycle_model = models.CycleModel.objects.last()
         if cycle_model:
             instance.cycle_id = cycle_model.id
