@@ -11,6 +11,7 @@ admin.autodiscover()
 urlpatterns = patterns('',
     url(r'^$', 'home.views.index', name='home'),
     url(r'^login/', include("login.urls")),
+    url(r'^logout/', include("logout.urls")),
     url(r'^admin/', include(admin.site.urls)),
 )
 urlpatterns += patterns('', url(r'^static/(?P<path>.*)$', never_cache(serve_static),

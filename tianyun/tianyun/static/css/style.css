@@ -10,7 +10,7 @@ body {font-family: PingFang SC,Lantinghei SC,Helvetica Neue,Helvetica,Arial,Micr
 
 .header { height: 200px; background-color: aqua;}
 .header .header-title {text-align: center;}
-.header .header-title p {line-height: 200px; font-size: 30px;}
+.header .header-title p {line-height: 50px; font-size: 30px;}
 
 .footer { height: 100px; background-color: azure;}
 .footer .footer-content { text-align: center; padding: 25px;}
