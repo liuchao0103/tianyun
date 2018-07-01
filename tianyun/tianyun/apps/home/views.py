@@ -33,7 +33,6 @@ def show_add_view(request):
     
 @login_required
 def add_post(request):
-    print "coming"
     try:
         instance = models.Accumulation()
         instance.user_id = request.user.id
@@ -44,6 +43,5 @@ def add_post(request):
         instance.save()
         return http.HttpResponseRedirect('/')
     except Exception, inst:
-        print "error is%s" %inst
         return http.HttpResponseServerError()
 

@@ -10,9 +10,31 @@
     <div class="container">
         <h2>当日完成明细(<a href="/add/"> + 添加积分</a>)</h2>
         {% if records %}
-        {% for item in records %}
-        {{ item.user.name }}-{{ item.created_at }}-{{ item.production_number }}
-        {% endfor %}
+        <table class="table">
+            <thead>
+                <th>添加时间</th>
+                <th>创建人</th>
+                <th>版本（产品号）</th>
+                <th>支数</th>
+                <th>系数</th>
+                <th>积分</th>
+                <th>备注</th>
+            </thead>
+            <tbody>
+                {% for item in records %}
+                <tr>
+                    <td>{{ item.created_at|date:"Y-m-d H:i:s" }}</td>
+                    <td>{{ request.user.username }}</td>
+                    <td>{{ item.production_id }}</td>
+                    <td>{{ item.production_number }}</td>
+                    <td>{{ item.coefficient }}</td>
+                    <td>{{ item.accumulation_number }}</td>
+                    <td>{{ item.comment }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+       
         {% else %}
         none
         {% endif %}
