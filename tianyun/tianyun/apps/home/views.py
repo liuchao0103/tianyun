@@ -36,6 +36,13 @@ def add_post(request):
     try:
         instance = models.Accumulation()
         instance.user_id = request.user.id
+        instance.username = request.user.username
+        cycle_model = models.CycleModel.objects.last()
+        if cycle_model:
+            instance.cycle_id = cycle_model.id
+            print "cycle_model is:%s" %cycle_model.id
+        else:
+            print "no cycle"
         form = forms.AccumulationForm(request.POST, instance=instance)
         if not form.is_valid():
             return render(request, "home/add-accumulation.html", locals()) 
@@ -43,5 +50,16 @@ def add_post(request):
         instance.save()
         return http.HttpResponseRedirect('/')
     except Exception, inst:
+        print "error is:%s" %inst
         return http.HttpResponseServerError()
+
+@login_required
+def show_statistic_view(request):
+    records = models.Accumulation.objects.filter()
+    return render(request, 'home/statistic.html', locals())
+
+@login_required
+def show_rank_view(request):
+    records = models.Accumulation.objects.filter()
+    return render(request, 'home/statistic.html', locals())
 

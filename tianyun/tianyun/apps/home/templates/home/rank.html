@@ -12,24 +12,16 @@
         {% if records %}
         <table class="table">
             <thead>
-                <th>添加时间</th>
-                <th>创建人</th>
-                <th>版本（产品号）</th>
-                <th>支数</th>
-                <th>系数</th>
+                <th>排名</th>
+                <th>姓名</th>
                 <th>积分</th>
-                <th>备注</th>
             </thead>
             <tbody>
                 {% for item in records %}
                 <tr>
-                    <td>{{ item.created_at|date:"Y-m-d H:i:s" }}</td>
-                    <td>{{ item.username }}</td>
-                    <td>{{ item.production_id }}</td>
-                    <td>{{ item.production_number }}</td>
-                    <td>{{ item.coefficient }}</td>
-                    <td>{{ item.accumulation_number }}</td>
-                    <td>{{ item.comment }}</td>
+                    <td>{{ item.id }}</td>
+                    <td>{{ request.user.username }}</td>
+                    <td>{{ item.total_accumulation_number }}</td>
                 </tr>
                 {% endfor %}
             </tbody>

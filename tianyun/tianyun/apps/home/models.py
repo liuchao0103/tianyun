@@ -9,6 +9,7 @@ from config import codes
 
 class Accumulation(models.Model):
     user_id = models.IntegerField(db_index=True)
+    username = models.CharField(max_length=32)
     created_at = models.DateTimeField(auto_now_add=True, db_index=True)
     updated_at = models.DateTimeField(auto_now=True, db_index=True)
     status = models.IntegerField(default=codes.StatusCode.AVAILABLE.value, db_index=True)
@@ -17,4 +18,16 @@ class Accumulation(models.Model):
     coefficient = models.IntegerField(default=0)
     accumulation_number = models.IntegerField(default=0)
     comment = models.CharField(max_length=1024)
+    cycle_id = models.IntegerField(db_index=True, default=0)
+    cycle_reward = models.IntegerField(default=0)
+
+class CycleModel(models.Model):
+    created_at = models.DateTimeField(auto_now_add=True, db_index=True)
+    updated_at = models.DateTimeField(auto_now=True, db_index=True)
+    status = models.IntegerField(default=codes.StatusCode.AVAILABLE.value, db_index=True)
+    start_time = models.DateTimeField()
+    end_time = models.DateTimeField()
+    cycle_reward = models.IntegerField()
+    cycle_limit = models.IntegerField()
+    
 
