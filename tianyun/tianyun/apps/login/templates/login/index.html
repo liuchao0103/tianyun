@@ -3,9 +3,17 @@
 {% load utils %}
 
 {% block title %}
-{% trans "首页" %}
+{% trans "登录" %}
 {% endblock %}
 {% block content %}
-login
+<section id="login">
+    <div class="container">
+        <form action="/login/post/" method="POST" id="login_form">
+            {% csrf_token %}
+            {% include "form.html" %}
+            <button class="form-button" type="submit">{% trans "Login" %}</button>
+        </form>
+    </div>
+</section>
 {% endblock %}
 

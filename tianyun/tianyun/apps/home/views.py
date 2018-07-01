@@ -19,4 +19,6 @@ from django.conf import settings
 
 @login_required
 def index(request):
+    user = request.user
+    print user.email
     return render(request, 'home/index.html', locals())

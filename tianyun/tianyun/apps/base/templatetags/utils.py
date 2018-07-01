@@ -17,9 +17,7 @@ from django.utils.timezone import utc
 from django_countries.data import COUNTRIES
 
 from config import codes
-
 logger = logging.getLogger(__name__)
-
 register = template.Library()
 version_pattern = re.compile(r"^(.*)\.(.*?)$")
 

@@ -15,12 +15,12 @@
         <meta name="apple-mobile-web-app-capable" content="yes"/>
         <!-- CSS -->
         <!-- HTML5 IE Enabling Script -->
-        <link rel="shortcut icon" href="{% version "static/images/favicon.ico" %}" type="image/x-icon" />
+        <link rel="shortcut icon" href="{% version "images/favicon.ico" %}" type="image/x-icon" />
     	<!--==== style css ====-->
-        <link href="{% version "static/css/bootstrap.min.css" %}" rel="stylesheet" />
-        <link href="{% version "static/css/libs/nsprogress/nsprogress.css" %}" rel="stylesheet" />
-        <link href="{% version "static/css/style.css" %}" rel="stylesheet" />
-        <script src="{% version "static/js/jquery-2.1.4.min.js" %}"></script>
+        <link href="{% version "css/bootstrap.min.css" %}" rel="stylesheet" />
+        <link href="{% version "css/libs/nsprogress/nsprogress.css" %}" rel="stylesheet" />
+        <link href="{% version "css/style.css" %}" rel="stylesheet" />
+        <script src="{% version "/static/js/jquery-2.1.4.min.js" %}"></script>
         {% block require_js %}
         {% endblock %}
         {% block css %}
@@ -38,12 +38,12 @@
          {% endblock %}
          <div id="id_loading"></div>
          <!-- jquery lib -->
-         <script src="{% version "static/js/jquery-2.1.4.min.js" %}"></script>
-         <script src="{% version "static/js/jquery-validate.js" %}"></script>
-         <script src="{% version "static/js/jquery-validate-additional-methods.js" %}"></script>
-         <script src="{% version "static/js/nsprogress.js" %}"></script>
-         <script src="{% version "static/js/bootstrap.min.js" %}"></script>
-         <script src="{% version "static/js/index.js" %}"></script>
+         <script src="{% version "js/jquery-2.1.4.min.js" %}"></script>
+         <script src="{% version "js/jquery-validate.js" %}"></script>
+         <script src="{% version "js/jquery-validate-additional-methods.js" %}"></script>
+         <script src="{% version "js/nsprogress.js" %}"></script>
+         <script src="{% version "js/bootstrap.min.js" %}"></script>
+         <script src="{% version "js/index.js" %}"></script>
          
          {% block js %}{% endblock %}
          {% block inline_js %}{% endblock %}

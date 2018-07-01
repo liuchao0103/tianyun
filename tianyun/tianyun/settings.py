@@ -91,5 +91,6 @@ STATIC_ROOT = 'tianyun/static/'
 
 TEMPLATE_DIRS = [os.path.join(PROJECT_ROOT, "templates")]
 
+STATIC_DEFAULT_VERSION = 1
 # Global login
 LOGIN_URL = '/login/'
